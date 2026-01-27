@@ -22,6 +22,7 @@ export default function ProfileSetup() {
         // In a real app, save profile data here
         console.log('Profile Data:', formData);
         // Navigate to next step
+        navigate('/professional-details');
     };
 
     return (

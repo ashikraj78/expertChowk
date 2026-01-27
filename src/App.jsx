@@ -16,6 +16,8 @@ import RoleSelection from './pages/RoleSelection';
 import OTPVerification from './pages/OTPVerification';
 import SkillSelection from './pages/SkillSelection';
 import ProfileSetup from './pages/ProfileSetup';
+import ProfessionalDetails from './pages/ProfessionalDetails';
+import PortfolioGateway from './pages/PortfolioGateway';
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
         <Route path="/otp-verification" element={<OTPVerification />} />
         <Route path="/skill-selection" element={<SkillSelection />} />
         <Route path="/profile-setup" element={<ProfileSetup />} />
+        <Route path="/professional-details" element={<ProfessionalDetails />} />
+        <Route path="/portfolio-gateway" element={<PortfolioGateway />} />
       </Routes>
     </BrowserRouter>
   );
