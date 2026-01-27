@@ -15,6 +15,7 @@ function Home() {
 import RoleSelection from './pages/RoleSelection';
 import OTPVerification from './pages/OTPVerification';
 import SkillSelection from './pages/SkillSelection';
+import ProfileSetup from './pages/ProfileSetup';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/roleSelection" element={<RoleSelection />} />
         <Route path="/otp-verification" element={<OTPVerification />} />
         <Route path="/skill-selection" element={<SkillSelection />} />
+        <Route path="/profile-setup" element={<ProfileSetup />} />
       </Routes>
     </BrowserRouter>
   );

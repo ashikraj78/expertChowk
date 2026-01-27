@@ -92,7 +92,10 @@ export default function SkillSelection() {
 
             {/* Bottom Sticky Button */}
             <div className="fixed bottom-0 left-0 right-0 bg-background-light dark:bg-background-dark p-4 pb-8 border-t border-slate-200 dark:border-slate-800">
-                <button className="w-full flex h-14 cursor-pointer items-center justify-center rounded-xl bg-primary text-background-dark text-lg font-bold leading-normal tracking-wide shadow-lg active:scale-[0.98] transition-transform">
+                <button
+                    onClick={() => navigate('/profile-setup')}
+                    className="w-full flex h-14 cursor-pointer items-center justify-center rounded-xl bg-primary text-background-dark text-lg font-bold leading-normal tracking-wide shadow-lg active:scale-[0.98] transition-transform"
+                >
                     <span>Next</span>
                     <span className="material-symbols-outlined ml-2">chevron_right</span>
                 </button>
