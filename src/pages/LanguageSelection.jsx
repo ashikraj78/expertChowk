@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function LanguageSelection() {
     const [selectedLanguage, setSelectedLanguage] = useState('Hindi');
+    const navigate = useNavigate();
 
     const languages = [
         { name: 'Hindi', native: 'हिन्दी', region: 'North India', icon: 'translate' },
@@ -75,7 +77,7 @@ export default function LanguageSelection() {
             {/* Fixed Bottom Action Area */}
             <div className="fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md p-4 border-t border-gray-200 dark:border-gray-800">
                 <div className="max-w-lg mx-auto w-full">
-                    <button className="flex min-w-[84px] w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-5 bg-primary text-background-dark text-lg font-bold leading-normal tracking-[0.015em] shadow-lg shadow-primary/20 active:scale-[0.98] transition-transform">
+                    <button onClick={() => navigate('/roleSelection')} className="flex min-w-[84px] w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-5 bg-primary text-background-dark text-lg font-bold leading-normal tracking-[0.015em] shadow-lg shadow-primary/20 active:scale-[0.98] transition-transform">
                         <span className="truncate font-display uppercase tracking-wider">
                             Continue / आगे बढ़ें
                         </span>

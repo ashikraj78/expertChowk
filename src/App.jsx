@@ -12,12 +12,15 @@ function Home() {
   );
 }
 
+import RoleSelection from './pages/RoleSelection';
+
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/language-selection" element={<LanguageSelection />} />
+        <Route path="/roleSelection" element={<RoleSelection />} />
       </Routes>
     </BrowserRouter>
   );
