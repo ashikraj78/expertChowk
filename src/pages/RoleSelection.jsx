@@ -89,7 +89,7 @@ export default function RoleSelection() {
 
                 {/* Sticky Bottom Action */}
                 <div className="flex px-0 py-6 sticky bottom-0 bg-background-light dark:bg-background-dark p-4">
-                    <button className="flex min-w-[84px] max-w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-5 flex-1 bg-primary text-background-dark text-lg font-bold leading-normal tracking-[0.015em] shadow-lg active:scale-[0.98] transition-transform">
+                    <button onClick={() => navigate('/otp-verification')} className="flex min-w-[84px] max-w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-5 flex-1 bg-primary text-background-dark text-lg font-bold leading-normal tracking-[0.015em] shadow-lg active:scale-[0.98] transition-transform">
                         <span className="truncate">Next</span>
                     </button>
                 </div>
