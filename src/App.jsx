@@ -14,6 +14,7 @@ function Home() {
 
 import RoleSelection from './pages/RoleSelection';
 import OTPVerification from './pages/OTPVerification';
+import SkillSelection from './pages/SkillSelection';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/language-selection" element={<LanguageSelection />} />
         <Route path="/roleSelection" element={<RoleSelection />} />
         <Route path="/otp-verification" element={<OTPVerification />} />
+        <Route path="/skill-selection" element={<SkillSelection />} />
       </Routes>
     </BrowserRouter>
   );

@@ -36,9 +36,11 @@ export default function OTPVerification() {
     };
 
     const handleVerify = () => {
-        // Verify OTP logic
-        console.log('Verifying OTP:', otp.join(''));
-        // Navigate to next page or dashboard
+        if (otp.join('').length === 4) {
+            navigate('/skill-selection');
+        } else {
+            alert('Please enter a 4 digit OTP');
+        }
     };
 
     return (
