@@ -1,26 +1,19 @@
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import useProfileStore from '../store/useProfileStore';
 
 export default function ProfileSetup() {
-    const [formData, setFormData] = useState({
-        fullName: '',
-        experience: '',
-        city: '',
-        radius: 25,
-    });
+    const { basicInfo, setBasicInfo } = useProfileStore();
     const navigate = useNavigate();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData((prev) => ({
-            ...prev,
+        setBasicInfo({
             [name]: name === 'radius' ? parseInt(value) : value,
-        }));
+        });
     };
 
     const handleContinue = () => {
-        // In a real app, save profile data here
-        console.log('Profile Data:', formData);
+        console.log('Profile Data:', basicInfo);
         // Navigate to next step
         navigate('/professional-details');
     };
@@ -59,10 +52,10 @@ export default function ProfileSetup() {
                         <div className="relative">
                             <input
                                 name="fullName"
-                                value={formData.fullName}
+                                value={basicInfo.fullName}
                                 onChange={handleChange}
                                 className="w-full rounded-lg text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary border border-slate-300 dark:border-[#325a67] bg-white dark:bg-[#192d33] h-16 px-4 text-lg font-normal placeholder:text-gray-400 dark:placeholder:text-[#92bbc9]"
-                                placeholder="e.g. John Smith"
+                                placeholder="e.g. Rajesh Kumar"
                                 type="text"
                             />
                         </div>
@@ -74,7 +67,7 @@ export default function ProfileSetup() {
                         <div className="relative">
                             <select
                                 name="experience"
-                                value={formData.experience}
+                                value={basicInfo.experience}
                                 onChange={handleChange}
                                 className="appearance-none w-full rounded-lg text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary border border-slate-300 dark:border-[#325a67] bg-white dark:bg-[#192d33] h-16 px-4 text-lg font-normal"
                             >
@@ -97,7 +90,7 @@ export default function ProfileSetup() {
                             <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 dark:text-[#92bbc9]">location_on</span>
                             <input
                                 name="city"
-                                value={formData.city}
+                                value={basicInfo.city}
                                 onChange={handleChange}
                                 className="w-full rounded-lg text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary border border-slate-300 dark:border-[#325a67] bg-white dark:bg-[#192d33] h-16 pl-12 pr-4 text-lg font-normal placeholder:text-gray-400 dark:placeholder:text-[#92bbc9]"
                                 placeholder="Search your city"
@@ -110,12 +103,12 @@ export default function ProfileSetup() {
                     <div className="flex flex-col gap-4 py-2">
                         <div className="flex justify-between items-center">
                             <label className="text-slate-900 dark:text-white text-base font-medium leading-normal">Work Radius</label>
-                            <span className="text-primary font-bold text-lg">{formData.radius} km</span>
+                            <span className="text-primary font-bold text-lg">{basicInfo.radius} km</span>
                         </div>
                         <div className="relative px-1">
                             <input
                                 name="radius"
-                                value={formData.radius}
+                                value={basicInfo.radius}
                                 onChange={handleChange}
                                 className="w-full h-3 bg-slate-200 dark:bg-[#325a67] rounded-full appearance-none cursor-pointer accent-primary"
                                 max="50"
@@ -129,7 +122,7 @@ export default function ProfileSetup() {
                             </div>
                         </div>
                         <p className="text-gray-500 dark:text-[#92bbc9] text-sm italic text-left">
-                            "I can travel up to {formData.radius}km for jobs."
+                            "I can travel up to {basicInfo.radius}km for jobs."
                         </p>
                     </div>
                 </main>

@@ -35,5 +35,5 @@
 
 body {
     font-family: 'Lexend', 'Noto Sans', sans-serif;
-    min-height: max(884px, 100vh);
+    min-height: 100dvh;
 }

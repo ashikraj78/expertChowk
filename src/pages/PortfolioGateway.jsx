@@ -5,7 +5,7 @@ export default function PortfolioGateway() {
 
     return (
         <div className="bg-background-light dark:bg-background-dark font-display text-gray-900 dark:text-white min-h-screen flex flex-col">
-            <div className="relative flex h-screen w-full flex-col overflow-hidden max-w-md mx-auto">
+            <div className="relative flex h-screen w-full flex-col overflow-hidden max-w-[480px] mx-auto shadow-2xl">
                 {/* TopAppBar */}
                 <div className="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between">
                     <div
@@ -40,7 +40,10 @@ export default function PortfolioGateway() {
                     {/* Empty States - Project Slots */}
                     <div className="flex flex-col gap-4 p-4">
                         {/* Slot 1 */}
-                        <div className="flex flex-col items-center gap-4 rounded-xl border-2 border-dashed border-gray-300 dark:border-[#325a67] px-6 py-10 bg-white/50 dark:bg-[#162a31] transition-colors active:bg-gray-100 dark:active:bg-[#1c363f] cursor-pointer group">
+                        <div
+                            onClick={() => navigate('/add-portfolio-entry')}
+                            className="flex flex-col items-center gap-4 rounded-xl border-2 border-dashed border-gray-300 dark:border-[#325a67] px-6 py-10 bg-white/50 dark:bg-[#162a31] transition-colors active:bg-gray-100 dark:active:bg-[#1c363f] cursor-pointer group"
+                        >
                             <div className="flex size-16 items-center justify-center rounded-full bg-primary/10 dark:bg-primary/20 text-primary">
                                 <span className="material-symbols-outlined text-4xl">add</span>
                             </div>
@@ -81,8 +84,8 @@ export default function PortfolioGateway() {
                         </p>
                     </div>
                     <button
-                        disabled
-                        className="w-full bg-gray-300 dark:bg-gray-700 text-gray-500 dark:text-gray-400 font-bold py-4 rounded-xl cursor-not-allowed flex items-center justify-center gap-2"
+                        onClick={() => navigate('/profile-under-review')}
+                        className="w-full bg-primary text-white font-bold py-4 rounded-xl shadow-lg active:scale-95 transition-transform flex items-center justify-center gap-2"
                     >
                         <span>Go Live</span>
                         <span className="material-symbols-outlined text-xl">rocket_launch</span>
